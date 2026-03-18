@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 // Layouts
 import AdminLayout from './layouts/AdminLayout'
@@ -14,17 +14,28 @@ import Product from './pages/Product'
 import Profile from './pages/Profile'
 import Register from './pages/Register'
 
+// Components
+import ProductsAdmin from './components/admin/ProductsAdmin'
+import OrdersAdmin from './components/admin/OrdersAdmin'
 
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registor" element={<Register/>}/>
-      </Routes>
-    </div>
+    <Routes>
+      {/* Foydalanuvchi qismi */}
+      <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/card" element={<Card />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/profile" element={<Profile />} />
+      </Route>
+      {/* Admin qismi */}
+
+
+      {/* 3. LAYOUTSIZ SAHIFALAR (To'liq ekran - Login/Register) */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
   )
 }
 

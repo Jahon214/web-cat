@@ -14,7 +14,7 @@ const Login = () => {
                     <input id="password" className="mt-1 border-2 shadow-md duration-300 shadow-purple-500 border-gray-300 focus:border-purple-600 outline-none pl-4 text-md py-2 w-full rounded-lg" type="password" placeholder="Parol" />
                     <button className="mt-5 border-2 outline-none pl-4 text-lg py-2.5 hover:bg-purple-800 duration-300 w-full rounded-lg font-semibold text-white bg-purple-600">Kirish</button>
                     <p className="pt-5 text-base text-center text-gray-600">Hali ro'yxatdan o'tmaganmisiz?
-                        <Link to="/registor" className="text-purple-600 text-md font-semibold hover:underline"> Ro'yxatdan o'tish</Link>
+                        <Link to="/register" className="text-purple-600 text-md font-semibold hover:underline"> Ro'yxatdan o'tish</Link>
                     </p>
                 </form>
             </div>
