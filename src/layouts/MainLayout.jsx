@@ -5,7 +5,6 @@ import Header from "../components/common/Header"
 import Sidebar from "../components/common/Sidebar"
 
 const MainLayout = () => {
-  
 
   return (
     <div className="h-screen bg-white flex flex-col">

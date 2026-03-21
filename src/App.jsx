@@ -6,13 +6,12 @@ import AdminLayout from './layouts/AdminLayout'
 import MainLayout from './layouts/MainLayout'
 
 // Pages
-import Home from './pages/Home'
 import Login from './pages/Login'
 import Admin from './pages/Admin'
-import Card from './pages/Card'
-import Product from './pages/Product'
-import Profile from './pages/Profile'
 import Register from './pages/Register'
+import Products from './pages/Products'
+import About from './pages/About'
+import Orders from './pages/Orders'
 
 // Components
 import ProductsAdmin from './components/admin/ProductsAdmin'
@@ -24,12 +23,10 @@ const App = () => {
     <Routes>
       {/* Foydalanuvchi qismi */}
       <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/card" element={<Card />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Products />} />
+          <Route path="/orders" element={<Orders />}/>
+          <Route path="/about" element={<About />}/>
       </Route>
-      {/* Admin qismi */}
 
 
       {/* 3. LAYOUTSIZ SAHIFALAR (To'liq ekran - Login/Register) */}
