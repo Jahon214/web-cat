@@ -18,9 +18,9 @@ const Products = () => {
         {categories.map((cat) => (
           <button
             key={cat.id}
-            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl border-2 border-purple-600 shadow-md hover:shadow-purple-400 cursor-pointer transition-all whitespace-nowrap ${
-              cat.active
-                ? "bg-[#9333EA] text-white shadow-md border-[#9333EA]"
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-xl border-2 border-purple-600 shadow-md hover:shadow-purple-400 cursor-pointer transition-all whitespace-nowrap 
+              ${cat.active
+                ? "bg-[#9333EA] text-white border-[#9333EA]"
                 : "bg-white text-gray-600"
             }`}
           >
@@ -48,7 +48,7 @@ const Products = () => {
         <ProductCard
           title="Mushuk O'yinchoqlari To'plami"
           price="15,000"
-          category="Ozuqalar"
+          category="Buyumlar"
           image="/products/3.png"
         />
         <ProductCard
