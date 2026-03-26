@@ -97,8 +97,15 @@ const Products = () => {
       </div>
 
       {/* Products grid */}
-      <div>
-          
+      <div className="grid grid-cols-4 mt-10 gap-8">
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} {...product}/>
+        ))}
+        {filteredProducts.length === 0 && (
+          <div className="border-dashed border-2 border-gray-200 rounded-3xl py-20 bg-gray-50 col-span-full text-center ">
+            <p className="text-lg italic text-gray-400">Hech narsa topilmadi...</p>
+          </div>
+        )}
       </div>
     </div>
   )
