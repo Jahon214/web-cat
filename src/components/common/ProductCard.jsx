@@ -1,8 +1,20 @@
 import React from 'react'
-
+import { useCart } from '../../context/CartContext'
 
 // src/components/common/ProductCard.jsx
-const ProductCard = ({ title, price, category, image }) => {
+const ProductCard = ({ id, title, price, category, image }) => {
+
+  const { addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    const cleanPrice = typeof price === 'string'
+      ? Number(price.replace(/[^0-9.-]+/g, ""))
+      : Number(price)
+
+    addToCart({ id, title, price: cleanPrice, image })
+  }
+
+
   return (
     <div className="bg-white rounded-3xl border border-gray-100 p-4 shadow-sm hover:shadow-xl transition-all group">
       {/* Rasm qismi */}
@@ -25,8 +37,8 @@ const ProductCard = ({ title, price, category, image }) => {
         </p>
 
         <div className="flex items-center justify-between pt-4">
-          <span className="text-[#9333EA] font-bold text-lg">{price} so'm</span>
-          <button className="bg-[#9333EA] text-white p-2 rounded-xl hover:bg-[#7e22ce] transition-colors flex items-center gap-1 px-4 text-sm font-semibold">
+          <span className="text-[#9333EA] font-bold text-lg">{Number(price).toLocaleString()} so'm</span>
+          <button onClick={handleAddToCart} className="bg-[#9333EA] text-white p-2 rounded-xl hover:bg-[#7e22ce] transition-colors flex items-center gap-1 px-4 text-sm font-semibold">
             <span className="text-lg">+</span> Savatga
           </button>
         </div>

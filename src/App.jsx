@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { CartProvider } from './context/CartContext'
 
 // Layouts
 import AdminLayout from './layouts/AdminLayout'
@@ -19,20 +20,22 @@ import OrdersAdmin from './components/admin/OrdersAdmin'
 
 
 const App = () => {
-  return ( 
-    <Routes>
-      {/* Foydalanuvchi qismi */}
-      <Route element={<MainLayout />}>
+  return (
+    <CartProvider>
+      <Routes>
+        {/* Foydalanuvchi qismi */}
+        <Route element={<MainLayout />}>
           <Route path="/" element={<Products />} />
-          <Route path="/orders" element={<Orders />}/>
-          <Route path="/about" element={<About />}/>
-      </Route>
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/about" element={<About />} />
+        </Route>
 
 
-      {/* 3. LAYOUTSIZ SAHIFALAR (To'liq ekran - Login/Register) */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
+        {/* 3. LAYOUTSIZ SAHIFALAR (To'liq ekran - Login/Register) */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </CartProvider>
   )
 }
 
