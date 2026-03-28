@@ -19,7 +19,7 @@ import OrdersAdmin from './components/admin/OrdersAdmin'
 
 
 const App = () => {
-  return (
+  return ( 
     <Routes>
       {/* Foydalanuvchi qismi */}
       <Route element={<MainLayout />}>
