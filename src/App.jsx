@@ -13,6 +13,7 @@ import Register from './pages/Register'
 import Products from './pages/Products'
 import About from './pages/About'
 import Orders from './pages/Orders'
+import Card from './pages/Card'
 
 // Components
 import ProductsAdmin from './components/admin/ProductsAdmin'
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/" element={<Products />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/about" element={<About />} />
+          <Route path="/card" element={<Card/>} />
         </Route>
 
 
