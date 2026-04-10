@@ -1,43 +1,32 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { CartProvider } from './context/CartContext'
-
-// Layouts
-import AdminLayout from './layouts/AdminLayout'
-import MainLayout from './layouts/MainLayout'
-
-// Pages
-import Login from './pages/Login'
-import Admin from './pages/Admin'
-import Register from './pages/Register'
-import Products from './pages/Products'
-import About from './pages/About'
-import Orders from './pages/Orders'
-import Card from './pages/Card'
-
-// Components
-import ProductsAdmin from './components/admin/ProductsAdmin'
-import OrdersAdmin from './components/admin/OrdersAdmin'
-
+import { Routes, Route } from "react-router-dom"
+import { CartProvider } from "./context/CartContext"
+import { AuthProvider } from "./context/AuthContext" // Import qilindi
+import { Toaster } from "react-hot-toast"
+import MainLayout from "./layouts/MainLayout"
+import Products from "./pages/Products"
+import Orders from "./pages/Orders"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import About from "./pages/About"
+import Card from "./pages/Card"
 
 const App = () => {
   return (
-    <CartProvider>
-      <Routes>
-        {/* Foydalanuvchi qismi */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Products />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/card" element={<Card/>} />
-        </Route>
-
-
-        {/* 3. LAYOUTSIZ SAHIFALAR (To'liq ekran - Login/Register) */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Toaster position="top-center" />
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/card" element={<Card />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 
