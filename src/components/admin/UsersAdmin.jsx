@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UsersAdmin = () => {
+function UsersAdmin() {
   return (
     <div>UsersAdmin</div>
   )
