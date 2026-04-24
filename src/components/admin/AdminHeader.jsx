@@ -14,7 +14,7 @@ const AdminHeader = () => {
   }
 
   return (
-    <header className="h-16 md:h-20 bg-[#0f172a] text-white flex items-center justify-between px-4 md:px-10 shadow-2xl z-60 sticky top-0 border-b border-white/5 backdrop-blur-md bg-[#0f172a]/95">
+    <header className="h-16 md:h-20 text-white flex items-center justify-between px-4 md:px-10 shadow-2xl z-60 sticky top-0 border-b border-white/5 backdrop-blur-md bg-[#0f172a]/95">
       
       {/* --- CHAP TOMON: LOGO & QIDIRUV --- */}
       <div className="flex items-center gap-8">
