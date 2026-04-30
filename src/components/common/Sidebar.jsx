@@ -10,7 +10,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { path: "/", label: "Do'kon", icon: <FaShoppingBag /> },
-    { path: "/cart", label: "Savat", icon: <FaShoppingCart />, badge: totalItems },
+    { path: "/card", label: "Savat", icon: <FaShoppingCart />, badge: totalItems },
     { path: "/orders", label: "Buyurtma", icon: <FaBoxOpen /> },
     { path: "/about", label: "Haqida", icon: <FaInfoCircle /> },
   ]

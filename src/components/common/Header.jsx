@@ -25,7 +25,7 @@ const Header = () => {
       </Link>
 
       <div className="flex items-center gap-3 md:gap-6">
-        <Link to="/cart" className="relative p-2 hover:scale-110 transition-transform">
+        <Link to="/card" className="relative p-2 hover:scale-110 transition-transform">
           <FaShoppingCart size={22} className="md:w-6 md:h-6" />
           {totalItems > 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-[10px] w-4 h-4 md:w-5 md:h-5 flex items-center justify-center rounded-full border-2 border-purple-700 font-bold">
